@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <fieldset>
+      Thanks for submitting this form! You have submitted this form {{ request.session.count }} times now.
+    </fieldset>
+    <fieldset>
+      <h1>Information Submitted</h1>
+      First Name: {{request.session.fname}}<br>
+      Last Name: {{request.session.lname}}<br>
+      Motorcyle: {{request.session.motorcycle}}<br>
+      Displacement: {{request.session.displacement}}<br>
+      <form action="/" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Go Back">
+      </form>
+    </fieldset>
+  </body>
+</html>
